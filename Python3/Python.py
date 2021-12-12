@@ -7,14 +7,16 @@
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 import math                               #imports a module (like '#include') --- math is a default build-in module
-from math import pi as thatConst
-from turtle import st
-from typing import List          #imports the variable pi from the module math as the name thatConst
+from math import pi as thatConst          #imports the variable pi from the module math as the name thatConst
 import module as myOtherFile
 
 
 
 variable = 0           #variable decleration
+#variable types:
+#int, float, string, complex, object, list, tuple, set, dictionary
+#pyton2 used to have 'long int' but it's removed in python3. now python automatically adjusts the memory size of variables
+
 str(variable)          #converts variable to string and returns that
 """
     str(), int(), float()  
@@ -84,7 +86,7 @@ myTuple = (4, 5, 9)              #lists but bad [not editable >:-(]
 dic = {'name': 'john', 'age': 22, "married": False}
 
 #Sets  ---a collection which is unordered, unchangeable*, and unindexed. No duplicate members.---
-settu = {"name", 57, 'cats', False}
+mySet = {"name", 57, 'cats', False}
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -93,7 +95,7 @@ i=1
 while i<=10:
     print(i); i+=1
 
-#for loop :)
+#for loop :) --> foreach
 for i in range(1, 11):
     print(i)
 
@@ -120,7 +122,7 @@ except ValueError as err:
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #files and stuff you can figure it out
-fileo = open('file.txt', 'r')      #r for read, w for write, a for apend, r+ for read&write, w+ for write&read, a+ for append&read
+fileo = open('file.txt', 'r')      #r for read, w for write, a for append, r+ for read&write, w+ for write&read, a+ for append&read
                                    #for some reason both w+ and r+ didn't work so I just used regular r and w here
 lineo = fileo.readlines()
 print(fileo.readlines())
@@ -136,8 +138,4 @@ fileo.close()
 fileu = open('file.txt', 'w'); fileu.write(co); fileu.close();
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
 

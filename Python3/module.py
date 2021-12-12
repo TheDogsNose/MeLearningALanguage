@@ -36,3 +36,29 @@ def calc():
         print('tf did you type')
     return 0
 
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#this is a class
+class Student:
+
+    def __init__(self, name, major, gpa):
+        self.name = name
+        self.major = major
+        self.gpa = gpa
+
+    def gpaCalc(self, percentage):
+        self.gpa = percentage * 0.04        
+
+
+student1 = Student('John', 'Art', 3.2)  #this is an object with class type Student
+student1.gpaCalc(85)
+print(student1.gpa)
+
+#inheritance
+class ASSTStudent(Student):
+    def __init__(self, name, major, gpa, reg):
+        super().__init__(name, major, gpa)          #super() refers to the parent class
+        self.reg = reg
+
+
+
