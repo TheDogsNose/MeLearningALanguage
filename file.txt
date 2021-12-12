@@ -1,1 +1,6 @@
+/*
+- C# without VS
+https://youtu.be/CO4BGZOuUkM
+*/
+
 https://towardsdatascience.com/building-android-apps-with-python-part-1-603820bebde8
