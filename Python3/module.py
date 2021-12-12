@@ -1,4 +1,5 @@
 from math import pow as pwr
+
 #for this shall be a function
 def func(var):
     a = "your var is " + str(var)
@@ -34,3 +35,4 @@ def calc():
     else:
         print('tf did you type')
     return 0
+
