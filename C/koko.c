@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+_Bool xor(_Bool x, _Bool y);
+
 int main()
 {
   /*
@@ -30,6 +32,18 @@ for (int i = 0; i <= 32; i++){
 }
 printf("\n");
   return 0;*/
-      printf("%-08.3f", 3.14159);
-      char a = getchar();
+    int i = 20;
+    for (int o = 0; o < 11; o++, i--, xor(1, 0) ){
+        printf("%d\n", i);
+        printf("%d\n", o);
+        printf("-----------------------------\n");
+    }
+
+  
+}
+
+_Bool xor(_Bool x, _Bool y){
+  _Bool b = (!(x && y) && (x || y));
+  printf("%d\n", b);
+  return b;
 }

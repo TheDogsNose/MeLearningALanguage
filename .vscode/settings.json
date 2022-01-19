@@ -6,5 +6,10 @@
         "listo",
         "MAGICK",
         "pyton"
-    ]
+    ],
+    "files.associations": {
+        "*.py3": "python",
+        "random": "c",
+        "stdio.h": "c"
+    }
 }
