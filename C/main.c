@@ -5,10 +5,12 @@
 #include <stdio.h>
 //stdio.h contains input/output related functions
 //std stands for standard library
+#include <math.h>
 
 #define bool _Bool
 #define true 1
 #define false 0
+
 
 //function definition (what the function actually does)
 bool doStuff(){
@@ -195,11 +197,14 @@ void conditions (long x)
         doStuff();
     }
     //break; and continue; works here too
-
-
-
-    
-
-
 }
+
+
+
+
+
+
+
+
+
 
