@@ -13,7 +13,7 @@ namespace CSHARP
         //function
         static void Main(string[] args)
         {
-            int variable = 0;       //varibale
+            int variable = 0;       //variable
             /* unsigned integer:
              * byte (8),    ushort (16),    uint (32, u),    ulong (64, ul)
              * signed integer:

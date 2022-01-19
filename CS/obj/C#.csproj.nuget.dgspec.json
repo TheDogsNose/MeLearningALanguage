@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Projects\\MeLearningALanguage\\MeLearningALanguage\\C#\\C#.csproj": {}
+    "E:\\Projects\\MeLearningALanguage\\MeLearningALanguage\\CS\\C#.csproj": {}
   },
   "projects": {
-    "E:\\Projects\\MeLearningALanguage\\MeLearningALanguage\\C#\\C#.csproj": {
+    "E:\\Projects\\MeLearningALanguage\\MeLearningALanguage\\CS\\C#.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\MeLearningALanguage\\MeLearningALanguage\\C#\\C#.csproj",
+        "projectUniqueName": "E:\\Projects\\MeLearningALanguage\\MeLearningALanguage\\CS\\C#.csproj",
         "projectName": "C#",
-        "projectPath": "E:\\Projects\\MeLearningALanguage\\MeLearningALanguage\\C#\\C#.csproj",
+        "projectPath": "E:\\Projects\\MeLearningALanguage\\MeLearningALanguage\\CS\\C#.csproj",
         "packagesPath": "C:\\Users\\THE RAIN\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\MeLearningALanguage\\MeLearningALanguage\\C#\\obj\\",
+        "outputPath": "E:\\Projects\\MeLearningALanguage\\MeLearningALanguage\\CS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
