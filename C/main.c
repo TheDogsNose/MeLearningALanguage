@@ -98,12 +98,6 @@ int main (){
 
 }
 
-// a function with a void type does not return any value
-//function definition (what the function actually does)
-void functionX (char * a, int x) {
-    printf("%s", a);
-}
-
 void conditions (long x)
 {
     // a condition is false if the result is 0 or null otherwise it's true
@@ -197,6 +191,14 @@ void conditions (long x)
         doStuff();
     }
     //break; and continue; works here too
+}
+
+// a function with a void type does not return any value
+//function definition (what the function actually does)
+void functionX (char * a, int x) {
+    printf("%s", a);
+    //a static variable is a one that does not terminate when the scoop ends. the  initiation is only done once and the same variable is used every time the function is called.
+    static int v = 0;
 }
 
 
