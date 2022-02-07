@@ -96,6 +96,26 @@ int main (){
     // this is how to call a function
     functionX(&a[0], x);
 
+//jumb command (be aware of infinite loops)
+label:
+    if (!true)
+        goto label;
+
+
+    //Array
+    int list[45] = {23, 43, 65, 3, 76, 8};
+    //this list has 45 elements, the remaining elements are equal to 0
+    //accessing an element
+    list[1] = 43;
+
+    //two dimensional arrays
+    int twoDArray[3][3] = {
+        {3, 4, 5},
+        {5, 6, 7},
+        {6, 6, 7}
+    };
+    twoDArray[0][1] = 4;
+
 }
 
 void conditions (long x)
@@ -197,7 +217,7 @@ void conditions (long x)
 //function definition (what the function actually does)
 void functionX (char * a, int x) {
     printf("%s", a);
-    //a static variable is a one that does not terminate when the scoop ends. the  initiation is only done once and the same variable is used every time the function is called.
+    //a static variable is a one that does not terminate when the scoop ends. the initiation is only done once and the same variable is used every time the function is called.
     static int v = 0;
 }
 
