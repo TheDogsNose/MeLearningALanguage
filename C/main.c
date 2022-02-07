@@ -75,6 +75,14 @@ int main (){
     printf("%d, %s \n", xo+2, ch);
     char c = getchar();
     gets(ch);
+    fgets(ch, 64, stdin);
+
+    /*More input and output:
+    //stderr, stdin, and stdout are the standard file objects concerning the console.
+
+    fgets(string, limit, File);
+
+    */
 
     /* Operations
         ++, --, -               unary: adds or sub 1. x = 1; y = x++; / y=1, x=2  ||  y = ++x; / y=2, x=2 
@@ -102,19 +110,52 @@ label:
         goto label;
 
 
-    //Array
+    //Array:
     int list[45] = {23, 43, 65, 3, 76, 8};
-    //this list has 45 elements, the remaining elements are equal to 0
-    //accessing an element
+    //this list has 45 elements, the remaining elements are equal to 0.
+    //An array declaration reserves a block of contiguous memory addresses for its elements.
+    //accessing an element:
     list[1] = 43;
 
-    //two dimensional arrays
+    //two dimensional arrays:
     int twoDArray[3][3] = {
         {3, 4, 5},
         {5, 6, 7},
         {6, 6, 7}
     };
     twoDArray[0][1] = 4;
+
+
+
+    //referencing:
+    //putting an "&" before a variable name refers to its memory address.
+    int yo = 0;
+    //yo = 0;
+    //&yo = 0061FDDC;
+    
+    //pointers:
+    //A pointer is a variable that contains the address of another variable.
+    //
+    int *p = &yo;
+    //p = 0061FDDC;
+    //derefrencing (see what a pointer is pointing to):
+    //*p = 0;
+
+    //it's possible to have a pointer to a pointer using "**" instead of "*".
+    //when you use an array's name it returns the address of the first element using "&" with arrays is unnecessary.
+    //(p = list) --> (p = &list[0])
+    //pointers can be used as function arguments. function types can also be pointers.
+
+
+    //strings:
+    //strings are an array of chars that ends with null ('\0').
+    int string[6] = "hello";
+    //"hello" = {'h', 'e', 'l', 'l', 'o', '\0'}
+
+
+
+
+
 
 }
 
