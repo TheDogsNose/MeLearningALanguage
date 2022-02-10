@@ -11,7 +11,6 @@
 #define true 1
 #define false 0
 
-
 //function definition (what the function actually does)
 bool doStuff(){
     return 1;
@@ -21,7 +20,6 @@ void functionX (char * a, int x);
 
 //function -- the compiler looks for the main function to call it in the start
 int main (){
-
     //variable
     int xo = 0;
     /*  data types are:
@@ -80,9 +78,30 @@ int main (){
     /*More input and output:
     //stderr, stdin, and stdout are the standard file objects concerning the console.
 
+    //It stops when either (limit-1) characters are read, the newline character is read, or the end-of-file is reached, whichever comes first.
     fgets(string, limit, File);
-
+    fputs(string, File);
     */
+    /*String functions
+        sprintf (string, format, args)  //same as printf but puts the output into an string pointer
+        sscanf (string, format, args)   //same as scanf but puts the output into an string pointer
+        
+        #include <string.h>
+        strcpy(s1, s2)      //Copies s2 into s1.
+        strcat(s1, s2)      //appends s2 onto the end of s1.
+        strncat(s1, s2, n)  //same thing but appends the first n charecters of s2 onto s1
+        strlen(s1)          //Returns the length of s1.
+        strcmp(s1, s2)      //Returns 0 if s1 and s2 are the same; less than 0 if s1<s2; greater than 0 if s1>s2.
+        strncmp(s1, s2, n)  //same thing but compares the first n charecters
+        strchr(s1, ch)      //Returns a pointer to the first occurrence of ch in s1.
+        strrchr(s1, ch)     //same but reverse
+        strstr(s1, s2)      //Returns a pointer to the first occurrence of s2 in s1.
+        Strrev(str)         //reverse a string
+        atoi(str)           //converts a string to an integer
+        atof(str)           //converts a string to a float
+        atol(str)           //converts a string to a long integer
+    */
+
 
     /* Operations
         ++, --, -               unary: adds or sub 1. x = 1; y = x++; / y=1, x=2  ||  y = ++x; / y=2, x=2 
@@ -93,8 +112,39 @@ int main (){
         =, +=, -=, *=, /=, %=   assignment
         ? :                     ternary or conditional
     */
-    /*
-    type casting: 
+    /*Operator Precedence
+        1: l2r
+            x++, x--, func(), a[x], y.x, y->x, (type){a}
+        2: r2l
+            ++x, --x, +x, -x, !x, ~x, (type)x, *x, &x, sizeof(x), _Alignof(x)
+        3: l2r
+            x*y, x/y, x%y
+        4: l2r
+            x+y, x-y
+        5: l2r
+            x>>y, x<<y
+        6: l2r
+            x<y, x>y, x<=y, x>=y
+        7: l2r
+            x!=y, x==y
+        8: l2r
+            x&y
+        9: l2r
+            x^y
+        10: l2r
+            x|y
+        11: l2r
+            x&&y
+        12: l2r
+            x||y
+        13: r2l
+            x? y : z
+        14: r2l
+            x=y, x+=y, x-=y, x*=y, x/=y, x%=y, x<<=y, x>>=y, x&=y, x^=y, x|=y
+        15: l2r
+            ,
+    */
+    /*type casting: 
     int a;
     float b = (float)a
     */
@@ -104,7 +154,7 @@ int main (){
     // this is how to call a function
     functionX(&a[0], x);
 
-//jumb command (be aware of infinite loops)
+//jumb command (be aware of infinite loops) - has to be in the same function
 label:
     if (!true)
         goto label;
@@ -145,11 +195,16 @@ label:
     //when you use an array's name it returns the address of the first element using "&" with arrays is unnecessary.
     //(p = list) --> (p = &list[0])
     //pointers can be used as function arguments. function types can also be pointers.
-
+    //Pointers can point to a function
+    //      return_type (*func_name)(parameters) 
+    //A function name points to the start of executable code so like arrays referencing and dereferencing is unnecessary
+    //pointer type can be void, but you must type cast it before derefrencing, and you cannot perform pointer arithmetic with void pointers.
+    void *ptr = &xo;
+    yo = *((int *)ptr);
 
     //strings:
     //strings are an array of chars that ends with null ('\0').
-    int string[6] = "hello";
+    char string[6] = "hello";
     //"hello" = {'h', 'e', 'l', 'l', 'o', '\0'}
 
 
@@ -239,7 +294,7 @@ void conditions (long x)
         doStuff();
     }
     
-    //executes once then check the expression instead of checking first
+    //executes once then check the expression at the end of every iteration instead of checking first
     do {
         doStuff();
     } while (expression);
@@ -262,7 +317,57 @@ void functionX (char * a, int x) {
     static int v = 0;
 }
 
+void moreData () {
 
+    /*Structures
+        the good ol' struct (user-defined data type that groups related variables of different data types.)
+        A struct variable is stored in a contiguous block of memory.
+        functions can have structs as arguments
+    */
+    struct student
+    {
+        char name[50];
+        unsigned int age;
+        unsigned int class;
+        float grades;
+    };
+    
+    struct student Ahmed = {"Ahmed", 22, 10, 98.5};
+    //the statement has to be type casted excpet in intialisation
+    struct student Ali;
+    Ali = (struct student) {"Ali", 19, 3, 89.3};
+    struct student Khalid = {.name = "Khalid", .grades = 78};
+
+    //you can access a member (variable) using a dot
+    Khalid.age = 17;
+
+    //structs of the same type can be assigned to each other
+    struct student s;
+    s = Khalid;
+    
+    //typedef defines a user created data type
+    typedef struct student student;
+    student popo;
+
+    typedef struct
+    {
+        int x;
+    } data;
+    
+    data lala;
+
+
+    //pointers to structs:
+    struct student *sp;
+    sp = &Ahmed;
+    //to access a member through a pointer you can either dereference it or use the -> operator
+    (*sp).age = 18;
+    sp->age = 19;
+
+
+
+
+}
 
 
 
