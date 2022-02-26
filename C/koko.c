@@ -1,5 +1,22 @@
 #include <stdio.h>
+#include <string.h>
 
+int main (){
+
+    enum state {working = 0, failed = 1}; 
+
+    enum state evar;
+    evar = failed;
+
+    printf("%d\n", evar);
+    return working;
+    }
+
+
+
+
+
+/*
 int fun();
 int fun2();
 
@@ -37,6 +54,6 @@ int fun2(){
   printf("%p\n", &b);
   return b;
 }
-
+*/
 
 

@@ -6,6 +6,7 @@
 //stdio.h contains input/output related functions
 //std stands for standard library
 #include <math.h>
+#include <stdlib.h>
 
 #define bool _Bool
 #define true 1
@@ -364,12 +365,47 @@ void moreData () {
     (*sp).age = 18;
     sp->age = 19;
 
+    //a union allows you store different data types in the same memory location
+    //when assignment is performed, the union memory location will be used for that member until another member assignment is performed
+    //trying to access a member that isn't occupying the memory location gives unexpected results
+    union NameU
+    {
+        int id;
+        char name[50];
+    };
+    
+    union NameU AhmedU;
+
+    AhmedU.id = 23;
+    strcpy(AhmedU.name, "Ahmed");
+    //only AhmedU.name has value, trying to access AhmedU.id will return unexpected value unless you're assigning value.
+    //only the last member that was assigned value has value
+    //unions are often used within structures since a structure can have a member to keep track of which union member stores a value    
+
+    //Enumeration (enum) assigns names to integer constants
+    //unlike #define, enum follows the scoop
+
+    enum state {working = 0, failed = 1}; 
+
+    enum state evar;
+    evar = failed;
+
+    //two names can have the same value
+    //every name has to be unique in the scoop
+    //if we don't assign values to enum names, the compiler by default assign values starting from 0
+    //all unassigned names get value as value of previous name plus one
+    
+
+    return working;
+}
+
+void memory () {
+
+    
 
 
 
 }
-
-
 
 
 
