@@ -394,17 +394,33 @@ void moreData () {
     //every name has to be unique in the scoop
     //if we don't assign values to enum names, the compiler by default assign values starting from 0
     //all unassigned names get value as value of previous name plus one
-    
+
 
     return working;
 }
 
 void memory () {
-
+    //sizeof() operator returns the size of a variable in bytes
     
+    //#include <stdlib.h>
+    
+    //the memory used by a programme is made of 5 parts: heap, stack, static, literal, instruction
+    //dynamic memory is managed with pointers that point to newly allocated blocks of memory in an area called the heap
+    
+    int *fourB = NULL;
+    fourB = malloc(4);
+    //malloc returns a pointer to a contiguous block of memory that is the size of the given bytes
 
+    int *fourBArray = NULL;
+    fourBArray = calloc(10, 4);
+    //calloc returns a pointer to a contiguous block og memory that has N items each is n bytes in size. the new memory initialized to 0
 
+    fourBArray = realloc(fourBArray, 4*12);
+    //realloc resizes the block of emory pointed to by ptr to n bytes. it returns a pointer to the new memory address. the new memory is not intialized
 
+    free(fourB);
+    free(fourBArray);
+    //free releases the block of memory pointed to by ptr
 }
 
 
