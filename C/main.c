@@ -7,6 +7,7 @@
 //std stands for standard library
 #include <math.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define bool _Bool
 #define true 1
@@ -18,7 +19,7 @@ bool doStuff(){
 }
 //function declartion (tells the compiler that a function exists so no errors occur. The definition can come later. A definition can function as a decleration but not the opposite)
 void functionX (char * a, int x);
-
+void files ();
 //function -- the compiler looks for the main function to call it in the start
 int main (){
     //variable
@@ -150,7 +151,7 @@ int main (){
     float b = (float)a
     */
 
-    char a[25] = "the function is called";
+    char a[26] = "the function is called\n";
     int x = 0; 
     // this is how to call a function
     functionX(&a[0], x);
@@ -208,11 +209,11 @@ label:
     char string[6] = "hello";
     //"hello" = {'h', 'e', 'l', 'l', 'o', '\0'}
 
+    files();
 
 
 
-
-
+    return 0;
 }
 
 void conditions (long x)
@@ -318,7 +319,7 @@ void functionX (char * a, int x) {
     static int v = 0;
 }
 
-void moreData () {
+int moreData () {
 
     /*Structures
         the good ol' struct (user-defined data type that groups related variables of different data types.)
@@ -420,10 +421,105 @@ void memory () {
 
     free(fourB);
     free(fourBArray);
-    //free releases the block of memory pointed to by ptr
+    //free releases the block of memory pointed to by pt
+    //it's important to free unused memory to avoid any problems
 }
 
+void files () {
 
+   int x;
+   FILE * fp = NULL;
+   fp = fopen ("ourFile", "r+");
+
+    if (fp == NULL){
+        printf("error opening the file\n");
+    }
+    
+    /*
+    - r open for reading (file must exist)
+    - w open for writing (file need not exist)
+    - a open for append (file need not exist)
+    - r+ open for reading and writing from beginning
+    - w+ open for reading and writing, overwriting file
+    - a+ open for reading and writing, appending to file
+    */
+
+    /* reading
+        - fgetc(fp) Returns the next character from the file pointed to by fp.
+            If the end of the file has been reached, then EOF is returned.
+        - fgets(buff, n, fp) Reads n-1 characters from the file pointed to by fp and stores the string in buff. A NULL character '\0' is appended as the last character in buff.
+            If fgets encounters a newline character or the end of file before n-1 characters is reached, then only the characters up to that point are stored in buff.
+        - fscanf(fp, conversion_specifiers, vars) Reads characters from the file pointed to by fp and assigns input to a list of variable pointers vars using conversion_specifiers.
+            As with scanf, fscanf stops reading a string when a space or newline is encountered.
+    */
+    /* writing
+        - fputc(char, fp) Writes character char to the file pointed to by fp.
+        - fputs(str, fp) Writes string str to the file pointed to by fp.
+        - fprintf(fp, str, vars) Prints string str to the file pointed to by fp.
+        str can optionally include format specifiers and a list of variables vars.
+    */
+
+   //rewind returns to the start of the file
+   rewind(fp);
+   
+   fscanf(fp, "%d", &x);
+   printf("this code was used: \"%d\" times\n", ++x);
+   //closing the file is important
+   fclose(fp);
+
+   fp = fopen ("ourFile", "w+");
+   
+   rewind(fp);
+   fprintf(fp, "%d\n", x);
+   fclose(fp);
+
+
+    //files can be opened in binary mode
+    //this is useful when trying to store variables, arrays, or even structs
+    /*
+        - rb open for reading (file must exist)
+        - wb open for writing (file need not exist)
+        - ab open for append (file need not exist)
+        - rb+ open for reading and writing from beginning
+        - wb+ open for reading and writing, overwriting file
+        - ab+ open for reading and writing, appending to file
+    */
+    /*
+        fwrite(ptr, item_size, num_items, fp) Writes num_items items of item_size size 
+        from pointer ptr to the file pointed to by file pointer fp.
+
+        fread(ptr, item_size, num_items, fp) Writes num_items items of item_size size 
+        from pointer fp file to the buffer pointed to by pointer pointer ptr.
+
+        ftell(fp) Returns a long int value corresponding to the fp file pointer position in
+        number of bytes from the start of the file.
+
+        fseek(fp, num_bytes, from_pos) Moves the fp file pointer position by num_bytes bytes or charecters relative to
+        position from_pos, which can be one of the following constants:
+        SEEK_SET -- start of file
+        SEEK_CUR -- current position
+        SEEK_END -- end of file
+    */
+
+    //usually a .txt extension indicates a text file, 
+    //.bin is for binary data, 
+    //.csv indicates comma separated values, 
+    //and .dat is a data file.
+
+    /*
+        x       	    Forces the function to fail if filename already exists. Can only be used with the "w" or "w+" specifiers.
+        c           	Enable the commit flag for the associated filename so that the contents of the file buffer are written directly to disk if either fflush or _flushall is called.
+        n           	Reset the commit flag for the associated filename to "no-commit." This is the default. It also overrides the global commit flag if you link your program with COMMODE.OBJ. The global commit flag default is "no-commit" unless you explicitly link your program with COMMODE.OBJ (see Link Options).
+        N           	Specifies that the file is not inherited by child processes.
+        S           	Specifies that caching is optimized for, but not restricted to, sequential access from disk.
+        R	            Specifies that caching is optimized for, but not restricted to, random access from disk.
+        T	            Specifies a file as temporary. If possible, it is not flushed to disk.
+        D	            Specifies a file as temporary. It is deleted when the last file pointer is closed.
+        ccs=encoding	Specifies the encoded character set to use (one of UTF-8, UTF-16LE, or UNICODE) for this file. Leave unspecified if you want ANSI encoding.
+    */
+
+    
+}
 
 
 

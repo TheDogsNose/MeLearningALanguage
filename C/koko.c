@@ -1,59 +1,32 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 int main (){
+   int x;
+   FILE * fp;
+   fp = fopen ("file.txt", "r+");
 
-    enum state {working = 0, failed = 1}; 
-
-    enum state evar;
-    evar = failed;
-
-    printf("%d\n", evar);
-    return working;
+    if (fp == NULL){
+        printf("error opening the file\n");
     }
+    
+  char c;
 
+  fseek(fp, 28, SEEK_SET);
 
-
-
-
-/*
-int fun();
-int fun2();
-
-int main()
-{
-  printf("%d\n", fun());
-  int a;
-  printf("%d\n", fun());
-  int b;
-  printf("%d\n", fun());
-  int c;
-  printf("%d\n", fun2());
-  int d;
-  printf("%d\n", fun2());
-  int e;
-  printf("%d\n", fun2());
+  c = fgetc(fp);
+  printf("%c\n", c);
+  c = fgetc(fp);
+  printf("%c\n", c);
+  c = fgetc(fp);
+  printf("%c\n", c);
+  c = fgetc(fp);
+  printf("%c\n", c);
   
-
+  fclose(fp);
+  
+  
+  return 0;
 }
-
-
-int fun(){
-
-  static int v = 0;
-  v++;
-  printf("%p\n", &v);
-  return v;
-
-}
-
-int fun2(){
-
-  int b = 0;
-  b++;
-  printf("%p\n", &b);
-  return b;
-}
-*/
-
 
