@@ -12,12 +12,12 @@ const c = 1;
 /*  data types:
         -undefined
         -null
-        -number
+        -Number
         -BigInt
-        -boolean
-        -string
-        -symbol
-        -object
+        -Boolean
+        -String
+        -Symbol
+        -Object
     undefined is the default datatype of uninitialized variables and is what returned when a function doesn't have a return statement.
     all numbers are 64bit (8-Byte) floating point.
     BigInts is used for larger integer values and is distinguished by appending an 'n' to the number.
@@ -25,7 +25,6 @@ const c = 1;
     Symbols are unique variables so comparing two symbols will always result in false.
     eache data type has it's own constructor (called factory function)
 */
-
 
 //function
 function func(a, b){
@@ -36,3 +35,5 @@ function func(a, b){
 }
 //a function call inside a function call (func and log)
 console.log(func(1, 2));
+
+
