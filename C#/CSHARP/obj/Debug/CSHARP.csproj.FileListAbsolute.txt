@@ -1,8 +1,0 @@
-E:\Projects\MeLearningALanguage\MeLearningALanguage\C#\CSHARP\bin\Debug\CSHARP.exe.config
-E:\Projects\MeLearningALanguage\MeLearningALanguage\C#\CSHARP\bin\Debug\CSHARP.exe
-E:\Projects\MeLearningALanguage\MeLearningALanguage\C#\CSHARP\bin\Debug\CSHARP.pdb
-E:\Projects\MeLearningALanguage\MeLearningALanguage\C#\CSHARP\obj\Debug\CSHARP.csproj.AssemblyReference.cache
-E:\Projects\MeLearningALanguage\MeLearningALanguage\C#\CSHARP\obj\Debug\CSHARP.csproj.SuggestedBindingRedirects.cache
-E:\Projects\MeLearningALanguage\MeLearningALanguage\C#\CSHARP\obj\Debug\CSHARP.csproj.CoreCompileInputs.cache
-E:\Projects\MeLearningALanguage\MeLearningALanguage\C#\CSHARP\obj\Debug\CSHARP.exe
-E:\Projects\MeLearningALanguage\MeLearningALanguage\C#\CSHARP\obj\Debug\CSHARP.pdb
