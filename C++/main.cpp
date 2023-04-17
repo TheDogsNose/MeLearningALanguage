@@ -1,18 +1,13 @@
+/*everything in c is also in c++ and c libraries can be included in c++ programs*/
 #include <iostream>
-#include "qiou.h"
-
-//using namespace std;
 
 int main(){
-    /*
-    int x;
 
-    for (int i=0; i<=10; i++){
-        std::cout << i << "\n";
-    }
-    std::cin >> x;
+//printing
+    std::cout << "hello";
+
     return 0;
-*/
-kioka();
-
 }
+
+
+
